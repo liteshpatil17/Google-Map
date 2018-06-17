@@ -1,2 +1,2 @@
 # Google-Map
-Google maps on JavaScript
+Basic Google-Map implementation in JavaScript
