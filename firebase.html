@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>Firebase</title>
+</head>
+<body>
+  Enter Data: <input id="mainText" type="text" placeholder="Enter your data" >
+  <button id="submitBtn" onclick="submitClick()">Send</button>
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCGpUa6fl1vaTMwRrymiROKbnSHPSplS_w",
+    authDomain: "mapapp-43cb3.firebaseapp.com",
+    databaseURL: "https://mapapp-43cb3.firebaseio.com",
+    projectId: "mapapp-43cb3",
+    storageBucket: "mapapp-43cb3.appspot.com",
+    messagingSenderId: "1004151464367"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="index.js"></script>
+
+</body>

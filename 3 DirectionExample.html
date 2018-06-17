@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>GeoLocation</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      height: 700px;
+      width: 800px;
+    }
+  </style>
+        
+</head>
+<body>
+
+<div id="map"></div>
+<button id="get">Get Direction</button> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPtdiK4KE3UTCxF_Vh6Vm7MChwgH34Dnc"></script>
+<script>
+      var map;
+      var directionDisplay=new google.maps.DirectionsRenderer();
+      var directionService=new google.maps.DirectionsService();
+      
+      var nasik=new google.maps.LatLng(19.9975,73.7898);
+      var pune=new google.maps.LatLng(18.5204,73.8567);
+      
+      var mapOption={
+        center:nasik,
+        zoom:8}
+      map=new google.maps.Map(document.getElementById('map'),mapOption); 
+      directionDisplay.setMap(map);
+      
+      function calculateRoute(){
+          var request={
+            origin:nasik,
+            destination:pune,
+            travelMode:'DRIVING'
+            };
+          directionService.route(request,function(result,status){
+            console.log(result,status);
+            if(status="OK"){
+                directionDisplay.setDirections(result);}
+            });
+      }
+      document.getElementById('get').onclick=function(){
+        calculateRoute();
+      };
+</script>
+
+
+
+
+</body>
+</html>
